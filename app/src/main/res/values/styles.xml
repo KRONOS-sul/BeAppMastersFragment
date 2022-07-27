@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MyToolbarTitle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/artisticViolet</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="MyToolbar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="background">@color/transparent</item>
+    </style>
+
+    <style name="MastersScreenEditText">
+        <item name="android:textColor">@color/artisticViolet</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/edit_text_bg</item>
+        <item name="android:layout_marginTop">18dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:paddingHorizontal">8dp</item>
+        <item name="android:drawableEnd">@drawable/ic_edit</item>
+        <item name="android:textColorHint">@color/wildBlueYonder</item>
+    </style>
+
+    <style name="MastersScreenTextView">
+        <item name="android:textColor">@color/artisticViolet</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginTop">16dp</item>
+    </style>
+</resources>
