@@ -6,168 +6,194 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@drawable/account_fragment_upper_background"
-        app:layout_constraintBottom_toTopOf="@id/bottom_layout"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.appcompat.widget.Toolbar
-            style="@style/MyToolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:navigationIcon="@drawable/ic_arrow_back">
-
-            <TextView
-                style="@style/MyToolbarTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/masters" />
-
-        </androidx.appcompat.widget.Toolbar>
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/avatar"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_marginTop="100dp"
-            android:src="@drawable/avatar_albert"
-            app:civ_border_color="@color/white"
-            app:civ_border_width="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageButton
-            android:id="@+id/avatar_camera_btn"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="100dp"
-            android:background="@drawable/circular_btn"
-            android:contentDescription="@string/change_avatar"
-            android:src="@drawable/ic_camera"
-            app:layout_constraintBottom_toBottomOf="@id/avatar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-    <FrameLayout
-        android:id="@+id/bottom_layout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="240dp"
-        android:background="@color/whiteSmoke"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingHorizontal="26dp"
-            android:paddingTop="16dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:background="@drawable/account_fragment_upper_background"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.Toolbar
+                style="@style/MyToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/ic_arrow_back">
+
+                <TextView
+                    style="@style/MyToolbarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:text="@string/masters" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/avatar"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="100dp"
+                android:src="@drawable/avatar_albert"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/avatar_camera_btn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="100dp"
+                android:background="@drawable/circular_btn"
+                android:contentDescription="@string/change_avatar"
+                android:src="@drawable/ic_camera"
+                app:layout_constraintBottom_toBottomOf="@id/avatar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <View
+                android:id="@+id/bottom_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="240dp"
+                android:background="@color/light_blue"
+                android:contentDescription="@string/gradient_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 style="@style/MastersScreenTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/full_name" />
+                android:text="@string/full_name"
+                app:layout_constraintBottom_toTopOf="@id/et_full_name"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
+                android:id="@+id/et_full_name"
                 style="@style/MastersScreenEditText"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:autofillHints="name"
                 android:hint="@string/full_name_example"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/bottom_layout" />
 
             <TextView
                 style="@style/MastersScreenTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/phone_number" />
+                android:text="@string/phone_number"
+                app:layout_constraintBottom_toTopOf="@id/et_phone_number"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
+                android:id="@+id/et_phone_number"
                 style="@style/MastersScreenEditText"
-                android:layout_width="match_parent"
-                android:autofillHints="name"
+                android:layout_width="0dp"
+                android:autofillHints="phone"
                 android:hint="@string/phone_example"
-                android:inputType="phone" />
+                android:inputType="phone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_full_name" />
 
             <TextView
                 style="@style/MastersScreenTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/service_type_speciality" />
+                android:text="@string/service_type_speciality"
+                app:layout_constraintBottom_toTopOf="@id/et_speciality"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
+                android:id="@+id/et_speciality"
                 style="@style/MastersScreenEditText"
-                android:layout_width="match_parent"
-                android:autofillHints="name"
+                android:layout_width="0dp"
                 android:hint="@string/service_type_example"
-                android:inputType="text" />
+                android:importantForAutofill="no"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_phone_number" />
 
             <TextView
-                android:id="@+id/add_more_option"
+                android:id="@+id/add_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="12dp"
+                android:paddingHorizontal="24dp"
                 android:text="@string/add_more"
-                android:textColor="@color/artisticViolet" />
+                android:textColor="@color/lightViolet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_speciality" />
 
             <TextView
                 style="@style/MastersScreenTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
-                android:text="@string/work_experience" />
+                android:text="@string/work_experience"
+                app:layout_constraintBottom_toTopOf="@id/et_work_experience"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
+                android:id="@+id/et_work_experience"
                 style="@style/MastersScreenEditText"
-                android:layout_width="match_parent"
-                android:autofillHints="name"
-                android:hint="@string/service_type_example"
-                android:inputType="text" />
+                android:layout_width="0dp"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_speciality" />
 
             <TextView
                 style="@style/MastersScreenTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="0dp"
-                android:text="@string/work_experience" />
+                android:text="@string/description"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@id/description"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <EditText
+                android:id="@+id/description"
                 style="@style/MastersScreenEditText"
-                android:layout_width="match_parent"
-                android:autofillHints="name"
-                android:hint="@string/service_type_example"
-                android:inputType="text" />
+                android:layout_width="0dp"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:isScrollContainer="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_work_experience" />
 
-            <TextView
-                style="@style/MastersScreenTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:text="@string/work_experience" />
 
-            <EditText
-                style="@style/MastersScreenEditText"
-                android:layout_width="match_parent"
-                android:autofillHints="name"
-                android:hint="@string/service_type_example"
-                android:inputType="text" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </LinearLayout>
-
-    </FrameLayout>
-
+    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
