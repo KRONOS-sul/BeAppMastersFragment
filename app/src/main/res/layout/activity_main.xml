@@ -176,20 +176,38 @@
                 android:layout_marginTop="0dp"
                 android:text="@string/description"
                 android:textSize="24sp"
-                app:layout_constraintBottom_toTopOf="@id/description"
+                app:layout_constraintBottom_toTopOf="@id/mcv_specialist_description"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <EditText
-                android:id="@+id/description"
-                style="@style/MastersScreenEditText"
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/mcv_specialist_description"
                 android:layout_width="0dp"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:isScrollContainer="true"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="58dp"
+                app:cardBackgroundColor="@color/light_blue"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/et_work_experience" />
+                app:layout_constraintTop_toBottomOf="@id/et_work_experience">
 
+                <EditText
+                    android:id="@+id/et_specialist_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="@drawable/edit_text_bg"
+                    android:fadeScrollbars="false"
+                    android:fontFamily="@font/open_sans_regular"
+                    android:inputType="textMultiLine"
+                    android:isScrollContainer="true"
+                    android:padding="8dp"
+                    android:focusable="true"
+                    android:scrollbars="vertical"
+                    android:scrollHorizontally="false"
+                    android:textColor="@color/wildBlueYonder"
+                    android:textSize="15sp" />
+
+            </com.google.android.material.card.MaterialCardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
